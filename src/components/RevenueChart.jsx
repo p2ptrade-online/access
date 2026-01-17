@@ -1,30 +1,28 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { revenueChartData } from '../data/demoData';
 
-export default function RevenueChart() {
+export default function RevenueChart({ title, subtitle, data }) {
   return (
     <div className="card">
       <div className="card-header">
         <div>
-          <div style={{ fontWeight: 600 }}>Revenue Trend</div>
-          <span style={{ color: 'var(--color-muted)', fontSize: 13 }}>Last 7 days</span>
+          <div style={{ fontWeight: 600 }}>{title}</div>
+          <span className="page-subtitle">{subtitle}</span>
         </div>
-        <span className="badge">$16.5K avg</span>
       </div>
       <div className="chart-container">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={revenueChartData}>
-            <XAxis dataKey="name" stroke="rgba(148,163,184,0.5)" />
-            <YAxis stroke="rgba(148,163,184,0.5)" />
+          <LineChart data={data} margin={{ left: -12, right: 8, top: 10, bottom: 0 }}>
+            <XAxis dataKey="label" axisLine={false} tickLine={false} tick={{ fill: '#b2bac8', fontSize: 11 }} />
+            <YAxis hide domain={['dataMin - 200', 'dataMax + 200']} />
             <Tooltip
               contentStyle={{
-                background: '#0f172a',
-                border: '1px solid rgba(148,163,184,0.2)',
-                borderRadius: 12
+                background: '#ffffff',
+                border: '1px solid #e5e7ef',
+                borderRadius: 12,
+                fontSize: 12
               }}
             />
-            <Line type="monotone" dataKey="revenue" stroke="#8B5CF6" strokeWidth={3} />
-            <Line type="monotone" dataKey="orders" stroke="#10B981" strokeWidth={2} />
+            <Line type="monotone" dataKey="value" stroke="#3f5cff" strokeWidth={2.5} dot={false} />
           </LineChart>
         </ResponsiveContainer>
       </div>
