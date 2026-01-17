@@ -1,38 +1,91 @@
+import { settingsAccount, settingsSections } from '../data/demoData';
+
 export default function SettingsPage() {
   return (
-    <div style={{ display: 'grid', gap: 20 }}>
+    <div className="page">
       <header>
-        <h1 style={{ marginBottom: 6 }}>Settings</h1>
-        <p style={{ color: 'var(--color-muted)', margin: 0 }}>Manage account and integrations.</p>
+        <h1 className="page-title">Settings</h1>
+        <p className="page-subtitle">Customize your experience</p>
       </header>
 
-      <div className="card" style={{ display: 'grid', gap: 16 }}>
-        <div>
-          <div style={{ fontWeight: 600 }}>Account</div>
-          <p style={{ color: 'var(--color-muted)', marginTop: 6 }}>Owner: Jamie Rivera</p>
-        </div>
-        <div className="list-item">
-          <div>
-            <div style={{ fontWeight: 600 }}>Notifications</div>
-            <span style={{ color: 'var(--color-muted)', fontSize: 12 }}>Push, email, SMS</span>
+      <div className="settings-card">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <div
+            style={{
+              width: 48,
+              height: 48,
+              borderRadius: 16,
+              background: 'rgba(255,255,255,0.2)',
+              display: 'grid',
+              placeItems: 'center',
+              fontWeight: 700
+            }}
+          >
+            {settingsAccount.initials}
           </div>
-          <span className="badge">Enabled</span>
-        </div>
-        <div className="list-item">
           <div>
-            <div style={{ fontWeight: 600 }}>POS Integrations</div>
-            <span style={{ color: 'var(--color-muted)', fontSize: 12 }}>Stripe, Square</span>
+            <div style={{ fontWeight: 700, fontSize: 18 }}>{settingsAccount.name}</div>
+            <span style={{ fontSize: 12, opacity: 0.8 }}>{settingsAccount.email}</span>
+            <div style={{ marginTop: 6 }}>
+              <span className="badge" style={{ background: 'rgba(255,255,255,0.2)', color: '#fff' }}>
+                {settingsAccount.plan}
+              </span>
+            </div>
           </div>
-          <span className="badge">Connected</span>
-        </div>
-        <div className="list-item">
-          <div>
-            <div style={{ fontWeight: 600 }}>Dark Mode</div>
-            <span style={{ color: 'var(--color-muted)', fontSize: 12 }}>Always on</span>
-          </div>
-          <span className="badge">On</span>
         </div>
       </div>
+
+      <div>
+        <div className="section-title">Account</div>
+        <div className="settings-list">
+          {settingsSections.account.map((item) => (
+            <div key={item.title} className="settings-item">
+              <div>
+                <div style={{ fontWeight: 600 }}>{item.title}</div>
+                <div className="subtitle">{item.subtitle}</div>
+              </div>
+              <span style={{ color: '#c0c4d4' }}>›</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div className="section-title">Preferences</div>
+        <div className="settings-list">
+          {settingsSections.preferences.map((item) => (
+            <div key={item.title} className="settings-item">
+              <div>
+                <div style={{ fontWeight: 600 }}>{item.title}</div>
+                <div className="subtitle">{item.subtitle}</div>
+              </div>
+              {item.type === 'toggle' ? (
+                <div className={`toggle${item.active ? ' active' : ''}`} />
+              ) : (
+                <span style={{ color: '#c0c4d4' }}>›</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div className="section-title">Support</div>
+        <div className="settings-list">
+          {settingsSections.support.map((item) => (
+            <div key={item.title} className="settings-item">
+              <div>
+                <div style={{ fontWeight: 600 }}>{item.title}</div>
+                <div className="subtitle">{item.subtitle}</div>
+              </div>
+              <span style={{ color: '#c0c4d4' }}>›</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="signout">Sign Out</div>
+      <p style={{ textAlign: 'center', fontSize: 12, color: '#c0c4d4' }}>POS Insights v1.0.0</p>
     </div>
   );
 }
