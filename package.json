@@ -1,0 +1,24 @@
+{
+  "name": "pos-capacitor-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cap:sync": "npx cap sync"
+  },
+  "dependencies": {
+    "@capacitor/core": "5.7.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.22.3",
+    "recharts": "2.12.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "5.7.0",
+    "@vitejs/plugin-react": "4.2.1",
+    "vite": "5.1.4"
+  }
+}
