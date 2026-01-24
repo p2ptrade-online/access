@@ -2,57 +2,54 @@ import { NavLink } from 'react-router-dom';
 
 const navItems = [
   {
-    label: 'Dashboard',
-    path: '/dashboard',
+    label: 'Home',
+    path: '/home',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <rect x="3" y="3" width="7" height="7" rx="2" />
-        <rect x="14" y="3" width="7" height="7" rx="2" />
-        <rect x="3" y="14" width="7" height="7" rx="2" />
-        <rect x="14" y="14" width="7" height="7" rx="2" />
+        <path d="M3 11.5l9-7 9 7" />
+        <path d="M5 10.5V20h5v-5h4v5h5v-9.5" />
       </svg>
     )
   },
   {
-    label: 'Sales',
-    path: '/sales',
+    label: 'Schedule',
+    path: '/schedule',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M4 16l5-5 4 4 7-7" />
-        <path d="M20 6v6h-6" />
+        <rect x="3" y="5" width="18" height="16" rx="3" />
+        <path d="M7 3v4" />
+        <path d="M17 3v4" />
+        <path d="M3 11h18" />
       </svg>
     )
   },
   {
-    label: 'Expenses',
-    path: '/expenses',
+    label: 'Swap',
+    path: '/swap',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 3" />
+        <path d="M7 7h11l-3-3" />
+        <path d="M17 17H6l3 3" />
       </svg>
     )
   },
   {
-    label: 'Menu',
-    path: '/menu',
+    label: 'Alerts',
+    path: '/alerts',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M6 3v6" />
-        <path d="M10 3v6" />
-        <path d="M6 9h4" />
-        <path d="M14 5h6" />
-        <path d="M17 3v18" />
+        <path d="M18 8a6 6 0 1 0-12 0c0 7-3 7-3 7h18s-3 0-3-7" />
+        <path d="M13.8 21a2 2 0 0 1-3.6 0" />
       </svg>
     )
   },
   {
-    label: 'Settings',
-    path: '/settings',
+    label: 'Profile',
+    path: '/profile',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 0 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 0 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" />
+        <circle cx="12" cy="8" r="3.2" />
+        <path d="M4.5 19.2a7.5 7.5 0 0 1 15 0" />
       </svg>
     )
   }
