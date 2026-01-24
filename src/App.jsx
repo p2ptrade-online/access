@@ -1,24 +1,28 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
-import DashboardPage from './pages/DashboardPage';
-import SalesPage from './pages/SalesPage';
-import ExpensesPage from './pages/ExpensesPage';
-import MenuPage from './pages/MenuPage';
-import SettingsPage from './pages/SettingsPage';
+import SetupPage from './pages/SetupPage';
 import LoginPage from './pages/LoginPage';
+import OtpPage from './pages/OtpPage';
+import HomePage from './pages/HomePage';
+import SchedulePage from './pages/SchedulePage';
+import SwapPage from './pages/SwapPage';
+import AlertsPage from './pages/AlertsPage';
+import ProfilePage from './pages/ProfilePage';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/" element={<Navigate to="/setup" replace />} />
+        <Route path="/setup" element={<SetupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/otp" element={<OtpPage />} />
         <Route element={<Layout />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/sales" element={<SalesPage />} />
-          <Route path="/expenses" element={<ExpensesPage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/swap" element={<SwapPage />} />
+          <Route path="/alerts" element={<AlertsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
